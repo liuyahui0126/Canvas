@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>刮刮乐</title>
+    <style>
+        canvas{
+            border:1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas width="500px" height="500px"></canvas>
+    <script>
+        var canvas = document.getElementsByTagName('canvas')[0];
+        var ctx = canvas.getContext('2d');
+        ctx.beginPath();
+        ctx.fillStyle = '#888';
+        ctx.fillRect(0,0,500,500);
+
+        //方形
+        // ctx.canvas.onmousedown = function(){
+        //     ctx.canvas.onmousemove = function(e){
+        //         ctx.clearRect(e.clientX,e.clientY,50,50);
+        //         ctx.canvas.onmouseup = function(){
+        //             ctx.canvas.onmousemove = null;
+        //         }
+        //     }
+        // }
+        //圆形
+        ctx.canvas.onmousedown = function(){
+            ctx.canvas.onmousemove = function(e){
+                ctx.beginPath();
+                ctx.globalCompositeOperation = 'destination-out' ;
+                ctx.arc(e.clientX,e.clientY,30,0,Math.PI*2);
+                ctx.fillStyle = '#fff';
+                ctx.fill();
+                ctx.canvas.onmouseup = function(){
+                    ctx.canvas.onmousemove = null;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Canvas</title>
+	<style type="text/css">
+/*		canvas{
+			border:1px solid #000;
+		}
+		table{
+			border:1px solid #000;
+		}
+		td{
+			width: 100px;
+			border:1px solid #000;
+		}*/
+		canvas{
+			border:1px solid #000;
+		}
+	</style>
+</head>
+<body>
+<!-- 	<canvas id="myCanvas" width=500 height=500></canvas>
+	<table>
+		<tr>
+			<td  align="right">1</td>
+			<td>2</td>
+			<td>3</td>
+		</tr>
+	</table> -->
+	<canvas id="canvas" width=500 height=500></canvas>
+	<img id="img" src="1.jpg">
+	<script type="text/javascript">
+	//怎么抽取图片？--19.07  
+	//模糊处理  高斯函数
+// 2.第二节课
+	var canvas = document.getElementById('canvas');
+	var ctx = canvas.getContext('2d');
+	img.onload = function(){
+		ctx.drawImage(img,200,200,500,500,0,0,500,500);
+		var data = canvas.toDataURL();
+		console.log(canvas.toDataURL());
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// 1.第一节课
+		// var canvas = document.getElementById('myCanvas');
+		// var ctx = canvas.getContext('2d');
+//矩形落地
+		// var w = canvas.width;
+		// var h = canvas.height;
+		// ctx.moveTo(100,100);
+		// ctx.fillStyle='red';
+		// ctx.fillRect(100,100,50,50);
+		// var currt  = 100;
+
+		// var timer = setInterval(function(){
+		// 	if(currt == h-50){
+		// 		clearInterval(timer);
+		// 	}else{
+		// 		ctx.clearRect(0,0,w,h);
+		// 		currt = currt+10;
+		// 		ctx.fillRect(100,currt,50,50);
+		// 	}
+		// },100);
+//圆角
+		// ctx.moveTo(100,100);
+		// ctx.arcTo(300,100,300,200,50);
+		// ctx.lineTo(300,200);
+		// ctx.stroke();
+//贝塞尔曲线
+		// ctx.moveTo(100,200);
+		// ctx.bezierCurveTo(200,100,300,300,500,0);
+		// ctx.stroke();
+//坐标轴转换
+		// ctx.moveTo(100,200);
+	</script>
+</body>
+</html>
